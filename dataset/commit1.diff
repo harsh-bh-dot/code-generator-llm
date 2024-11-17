@@ -1,0 +1,37 @@
+flask app created
+diff --git a/app.py b/app.py
+new file mode 100644
+index 0000000..9d107c7
+--- /dev/null
++++ b/app.py
+@@ -0,0 +1,38 @@
++from flask import Flask, jsonify, request
++
++
++app = Flask(__name__)
++
++
++@app.route("/user", methods=["GET"])
++def get():
++    result = {
++        "status": "SUCCESS",
++        "message": f"title: abc and content: xyz"
++    }
++    // return
++    return jsonify(result)
++
++
++@app.route("/user", methods=["POST"])
++def post():
++    title = request.json["title"]
++    content = request.json["content"]
++    result = {
++        "status": "SUCCESS",
++        "message": f"processed the data with params title: {title} and content: {content}"
++    }
++    return jsonify(result)
++
++
++if __name__ == "__main__":
++    app.run(host= "0.0.0.0", debug=True)
+(END)

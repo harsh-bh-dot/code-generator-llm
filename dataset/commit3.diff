@@ -1,0 +1,14 @@
+removed unnecessary code
+diff --git a/app.py b/app.py
+index 5740d7e..10f9eca 100644
+--- a/app.py
++++ b/app.py
+@@ -26,13 +26,3 @@ def get():
+         "status": "SUCCESS",
+         "message": f"title: abc and content: xyz"
+     }
+-    // return
+     return jsonify(result)
+
+ @app.route("/user", methods=["POST"])
+(END)

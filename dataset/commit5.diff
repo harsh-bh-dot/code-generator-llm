@@ -1,0 +1,31 @@
+validations added on input params in POST request
+diff --git a/app.py b/app.py
+index 2416348..0ecc153 100644
+--- a/app.py
++++ b/app.py
+@@ -15,12 +15,18 @@ def get():
+
+ @app.route("/user", methods=["POST"])
+ def post():
+-    food = request.json["food"]
+-    ingredient = request.json["ingredient"]
+-    result = {
+-        "status": "SUCCESS",
+-        "message": f"processed the data with params food: {food} and state: {ingredient}"
+-    }
++    if request.json.get("food") is None or request.json.get("ingredient") is None:
++        result = {
++            "status": "ERROR",
++            "message": "food or ingredient is not provided"
++        }
++    else:
++        food = request.json["food"]
++        ingredient = request.json["ingredient"]
++        result = {
++            "status": "SUCCESS",
++            "message": f"processed the data with params food: {food} and state: {ingredient}"
++        }
+     return jsonify(result)
+
+
+(END)

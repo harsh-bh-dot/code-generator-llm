@@ -1,0 +1,29 @@
+input params to POST changed to country and state
+diff --git a/app.py b/app.py
+index 9d107c7..5740d7e 100644
+--- a/app.py
++++ b/app.py
+@@ -8,18 +8,18 @@ app = Flask(__name__)
+ def get():
+     result = {
+         "status": "SUCCESS",
+-        "message": f"title: abc and content: xyz"
++        "message": f"country: abc and state: xyz"
+     }
+     // return
+     return jsonify(result)
+
+ @app.route("/user", methods=["POST"])
+ def post():
+-    title = request.json["title"]
+-    content = request.json["content"]
++    country = request.json["country"]
++    state = request.json["state"]
+     result = {
+         "status": "SUCCESS",
+-        "message": f"processed the data with params title: {title} and content: {content}"
++        "message": f"processed the data with params country: {country} and state: {state}"
+     }
+     return jsonify(result)
+
+(END)
