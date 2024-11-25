@@ -78,7 +78,7 @@ packaging==24.2
 pandas==2.2.3
 pandocfilters==1.5.1
 parso==0.8.4
-peft @ git+https://github.com/huggingface/peft.git@e536616888d51b453ed354a6f1e243fecb02ea08
+peft @ git+https://github.com/huggingface/peft.git@eaaf03c12767c9d3dbc9edca7766cfcb799c38a0
 pexpect==4.9.0
 platformdirs==4.3.6
 prometheus_client==0.21.0
